@@ -1,0 +1,90 @@
+.style-switcher{
+    position: fixed;
+    right: 0;
+    top: 80px;
+    padding: 20px;
+    width: 220px;
+    border: 1px solid var(--bg-black-50);
+    border-right: none;
+    background: var(--bg-black-100);
+    z-index: 101;
+    border-radius: 10px 0 0 10px;
+    transition: all 0.3s ease;
+    transform: translateX(100%);
+    box-shadow: -5px 5px 25px rgba(0, 0, 0, 0.15);
+}
+.style-switcher.open{
+    transform: translateX(0);
+}
+.style-switcher .s-icon{
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    background: var(--bg-black-100);
+    color: var(--text-black-900);
+    right: 100%;
+    border: 1px solid var(--bg-black-50);
+    border-right: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 8px 0 0 8px;
+    box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.1);
+}
+.style-switcher .s-icon i{
+    line-height: 40px;
+}
+.style-switcher .style-switcher-toggler{
+    top: 20px;
+}
+.style-switcher .day-night{
+    top: 65px;
+}
+.style-switcher .s-icon:hover{
+    color: var(--skin-color);
+}
+.style-switcher h4{
+    margin: 0 0 15px;
+    color: var(--text-black-900);
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.style-switcher .colors{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: flex-start;
+}
+.style-switcher .colors span{
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 2px solid transparent;
+}
+.style-switcher .colors span:hover{
+    transform: scale(1.15);
+    border-color: var(--text-black-900);
+}
+.style-switcher .color-1{
+    background: #ec1839;
+}
+.style-switcher .color-2{
+    background: #fa5b0f;
+}
+.style-switcher .color-3{
+    background: #37b182;
+}
+.style-switcher .color-4{
+    background: #1854b4;
+}
+.style-switcher .color-5{
+    background: #f021b2;
+}
