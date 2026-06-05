@@ -541,23 +541,12 @@ h3.my-profession{
      color: var(--skin-color);
      transition: all 0.3s ease;
 }
-.service .service-item .service-item-inner .icon img{
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    border-radius: 50%;
-    padding: 6px;
-    transition: all 0.3s ease;
-}
 .service .service-item .service-item-inner:hover .icon{
     background: var(--skin-color);
 }
 .service .service-item .service-item-inner:hover .icon .fas{
     font-size: 25px;
     color: #ffffff;
-}
-.service .service-item .service-item-inner:hover .icon img{
-    transform: scale(0.9);
 }
 .service .service-item .service-item-inner h4{
     font-size: 18px;
