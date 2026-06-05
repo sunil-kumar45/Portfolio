@@ -83,3 +83,22 @@ window.addEventListener("scroll", () => {
         backToTopBtn.classList.remove("show");
     }
 });
+
+/*============================= Services Card Mobile Click/Tap Toggle =====================*/
+const serviceCards = document.querySelectorAll(".service .service-item-inner");
+
+serviceCards.forEach(card => {
+    card.addEventListener("click", () => {
+        if (window.innerWidth < 1024) {
+            const isActive = card.classList.contains("active");
+            
+            // Remove active state from all other service cards
+            serviceCards.forEach(c => c.classList.remove("active"));
+            
+            // Toggle active state on current card
+            if (!isActive) {
+                card.classList.add("active");
+            }
+        }
+    });
+});
