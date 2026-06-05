@@ -743,116 +743,18 @@ h3.my-profession{
 
 
 /*contact*/
-.contact-form-subtitle {
+.contact-title{
+    color: var(--skin-color);
+    text-align: center;
+    font-size: 25px;
+    margin-bottom: 20px; 
+}
+.contact-sub-title{
     color: var(--text-black-900);
     text-align: center;
     font-size: 15px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    margin-bottom: 40px;
+    margin-bottom: 60px;
 }
-
-/* Connect Section */
-.connect-section {
-    text-align: center;
-    padding: 20px 15px 10px;
-}
-.connect-heading {
-    font-size: 28px;
-    font-weight: 700;
-    color: var(--skin-color);
-    margin-bottom: 12px;
-    letter-spacing: -0.02em;
-}
-.connect-description {
-    font-size: 15px;
-    color: var(--text-black-700);
-    max-width: 650px;
-    margin: 0 auto 35px;
-    line-height: 1.7;
-}
-
-/* Social Cards Grid */
-.social-cards-grid {
-    display: flex;
-    justify-content: center;
-    align-items: stretch;
-    gap: 20px;
-    flex-wrap: wrap;
-    max-width: 900px;
-    margin: 0 auto;
-}
-.social-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 110px;
-    padding: 22px 10px 18px;
-    background: var(--bg-black-100);
-    border: 1px solid var(--bg-black-50);
-    border-radius: 14px;
-    text-decoration: none;
-    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-    cursor: pointer;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-}
-.social-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
-    border-color: var(--skin-color);
-}
-.social-card-icon {
-    width: 52px;
-    height: 52px;
-    border-radius: 50%;
-    background: var(--bg-black-50);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 12px;
-    transition: all 0.35s ease;
-}
-.social-card-icon i {
-    font-size: 22px;
-    color: var(--text-black-700);
-    transition: color 0.35s ease;
-}
-.social-card:hover .social-card-icon {
-    background: var(--skin-color);
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
-}
-.social-card:hover .social-card-icon i {
-    color: #ffffff;
-}
-.social-card-name {
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--text-black-900);
-    margin-bottom: 3px;
-    letter-spacing: 0.02em;
-}
-.social-card-link {
-    font-size: 11px;
-    color: var(--text-black-700);
-    opacity: 0.7;
-}
-.social-card:hover .social-card-name {
-    color: var(--skin-color);
-}
-
-/* Contact Divider */
-.contact-divider {
-    width: 80px;
-    height: 3px;
-    background: var(--skin-color);
-    margin: 50px auto 40px;
-    border-radius: 2px;
-    opacity: 0.6;
-}
-
-/* Contact Info Items (legacy fallback) */
 .contact-info-item{
     flex: 0 0 25%;
     max-width: 25%;
@@ -879,8 +781,6 @@ h3.my-profession{
     color: var(--text-black-700);
     font-weight: 400;
 }
-
-/* Contact Form */
 .contact-form{
     flex: 0 0 100%;
     max-width: 100%;
@@ -909,13 +809,9 @@ h3.my-profession{
 }
 .contact-form .form-item .form-control:focus{
     box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
-    border-color: var(--skin-color);
-    outline: none;
 }
 .contact-form .form-item textarea.form-control{
     height: 140px;
-    padding-top: 15px;
-    resize: vertical;
 }
 .contact-form .btn{
     height: 50px;
@@ -929,6 +825,56 @@ h3.my-profession{
     font-weight: 300;
     margin-top: 70px;
  }
+
+/* Connect With Me Section */
+.connect-section {
+    text-align: center;
+    margin: 60px 0 40px;
+    width: 100%;
+}
+.connect-section .connect-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text-black-900);
+    margin-bottom: 8px;
+}
+.connect-section .connect-subtitle {
+    font-size: 15px;
+    color: var(--text-black-700);
+    margin-bottom: 24px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.social-links-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+.social-icon-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background-color: var(--bg-black-100);
+    border: 1px solid var(--bg-black-50);
+    color: var(--text-black-700);
+    border-radius: 50%;
+    font-size: 20px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+.social-icon-btn:hover {
+    background-color: var(--skin-color);
+    color: #ffffff;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    border-color: var(--skin-color);
+}
+
 
 
 @media(max-width:1199px){
@@ -1171,41 +1117,20 @@ h3.my-profession{
         margin-right: auto;
     }
 
-    /* Mobile overrides for Social Cards */
-    .connect-heading {
-        font-size: 22px;
+    /* Mobile overrides for Connect Section */
+    .connect-section {
+        margin: 40px 0 25px;
     }
-    .connect-description {
-        font-size: 13px;
+    .connect-section .connect-title {
+        font-size: 20px;
+    }
+    .connect-section .connect-subtitle {
+        font-size: 14px;
         max-width: 90%;
     }
-    .social-cards-grid {
-        gap: 12px;
-    }
-    .social-card {
-        width: calc(33.33% - 10px);
-        min-width: 90px;
-        padding: 18px 8px 14px;
-    }
-    .social-card-icon {
-        width: 44px;
-        height: 44px;
-    }
-    .social-card-icon i {
+    .social-icon-btn {
+        width: 40px;
+        height: 40px;
         font-size: 18px;
-    }
-    .social-card-name {
-        font-size: 11px;
-    }
-    .social-card-link {
-        font-size: 9px;
-    }
-    .contact-divider {
-        margin: 35px auto 30px;
-    }
-    .contact-form-subtitle {
-        font-size: 13px;
-        letter-spacing: 1px;
-        margin-bottom: 25px;
     }
 }
