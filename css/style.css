@@ -826,6 +826,55 @@ h3.my-profession{
     margin-top: 70px;
  }
 
+/* Connect With Me Section */
+.connect-section {
+    text-align: center;
+    margin: 60px 0 40px;
+    width: 100%;
+}
+.connect-section .connect-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text-black-900);
+    margin-bottom: 8px;
+}
+.connect-section .connect-subtitle {
+    font-size: 15px;
+    color: var(--text-black-700);
+    margin-bottom: 24px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.social-links-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+.social-icon-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background-color: var(--bg-black-100);
+    border: 1px solid var(--bg-black-50);
+    color: var(--text-black-700);
+    border-radius: 50%;
+    font-size: 20px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+.social-icon-btn:hover {
+    background-color: var(--skin-color);
+    color: #ffffff;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    border-color: var(--skin-color);
+}
+
 @media(max-width:1199px){
     .aside{
         left: -270px;
@@ -1064,5 +1113,22 @@ h3.my-profession{
         line-height: 1.8;
         margin-left: auto;
         margin-right: auto;
+    }
+
+    /* Mobile overrides for Connect Section */
+    .connect-section {
+        margin: 40px 0 25px;
+    }
+    .connect-section .connect-title {
+        font-size: 20px;
+    }
+    .connect-section .connect-subtitle {
+        font-size: 14px;
+        max-width: 90%;
+    }
+    .social-icon-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
     }
 }
