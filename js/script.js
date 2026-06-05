@@ -1,6 +1,14 @@
 /*============================= Typing animation =====================*/
 var typed = new Typed(".typing", {
-    strings: ["Student", "Coder", "Web Designer", "Web Developer"],
+    strings: [
+        "Business Intelligence Analyst",
+        "Data Analyst",
+        "Business Analyst",
+        "Power BI Enthusiast",
+        "SQL Enthusiast",
+        "Analytics Enthusiast",
+        "Problem Solver"
+    ],
     typeSpeed: 100,
     BackSpeed: 60,
     loop: true

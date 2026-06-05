@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Clicker+Script&family=Poppins:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Clicker+Script&family=Montserrat:wght@700;800;900&family=Poppins:wght@200;300;400;500;600;700&display=swap');
 
 html{
     scroll-behavior: smooth;
@@ -266,9 +266,9 @@ h3.hello{
     margin: 15px 0 ;
 }
 h3.hello span{
-    font-family: 'Clicker Script' , cursive;
+    font-family: 'Montserrat', sans-serif;
     font-size: 30px;
-    font-weight: 700;
+    font-weight: 800;
     color: var(--skin-color);
 }
 h3.my-profession{
@@ -283,36 +283,47 @@ h3.my-profession{
     font-size: 20px;
     color: var(--text-black-700);
 }
+.home .row{
+    align-items: center;
+}
 .home .home-img{
     flex: 0 0 40%;
     max-width: 40%;
     text-align: center;
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.home-img::after{
+.home .home-img .home-img-inner{
+    position: relative;
+    display: inline-block;
+}
+.home-img-inner::after{
     content: '';
     position: absolute;
-    height:80px;
+    height: 80px;
     width: 80px;
     border-bottom: 10px solid var(--skin-color);
     border-right: 10px solid var(--skin-color);
-    right: 20px;
-    bottom: -40px;
+    right: -20px;
+    bottom: -20px;
 }
-.home-img::before{
+.home-img-inner::before{
     content: '';
     position: absolute;
-    height:80px;
+    height: 80px;
     width: 80px;
     border-top: 10px solid var(--skin-color);
     border-left: 10px solid var(--skin-color);
     left: -20px;
-    top: -40px;
+    top: -20px;
 }
 .home .home-img img{
     margin: auto;
     border-radius: 5px;
     height: 400px;
+    display: block;
 }
 /*About*/
 .about .about-content{
@@ -742,17 +753,21 @@ h3.my-profession{
         border-radius: 10px;
         display: block;
     }
-    .home-img::before{
-        left: calc(50% - 155px);
-        top: -30px;
+    .home-img-inner::before{
+        left: -15px;
+        top: -15px;
         height: 60px;
         width: 60px;
+        border-top-width: 8px;
+        border-left-width: 8px;
     }
-    .home-img::after{
-        right: calc(50% - 155px);
-        bottom: -30px;
+    .home-img-inner::after{
+        right: -15px;
+        bottom: -15px;
         height: 60px;
         width: 60px;
+        border-bottom-width: 8px;
+        border-right-width: 8px;
     }
 }
 @media(max-width:767px){
@@ -770,14 +785,6 @@ h3.my-profession{
     .home .home-img img {
         width: 220px;
         max-height: 300px;
-    }
-    .home-img::before {
-        left: calc(50% - 130px);
-        top: -20px;
-    }
-    .home-img::after {
-        right: calc(50% - 130px);
-        bottom: -20px;
     }
 }
 
