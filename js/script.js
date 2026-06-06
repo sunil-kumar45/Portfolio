@@ -157,3 +157,54 @@ if (contactForm) {
         });
     });
 }
+
+/*============================= Project Lightbox Modal =====================*/
+const lightbox       = document.getElementById("project-lightbox");
+const lightboxImg    = document.getElementById("lightbox-img");
+const lightboxCaption = document.getElementById("lightbox-caption");
+const lightboxClose  = lightbox ? lightbox.querySelector(".lightbox-close") : null;
+const lightboxBackdrop = lightbox ? lightbox.querySelector(".lightbox-backdrop") : null;
+
+function openLightbox(imgSrc, title) {
+    if (!lightbox) return;
+    lightboxImg.src = imgSrc;
+    lightboxImg.alt = title || "Project Screenshot";
+    lightboxCaption.textContent = title || "";
+    lightbox.classList.add("active");
+    document.body.style.overflow = "hidden";
+}
+
+function closeLightbox() {
+    if (!lightbox) return;
+    lightbox.classList.remove("active");
+    document.body.style.overflow = "";
+    // Clear src after transition so old image doesn't flash on next open
+    setTimeout(() => { lightboxImg.src = ""; }, 350);
+}
+
+// Open lightbox when "View Project" is clicked
+document.querySelectorAll(".view-project-btn").forEach(btn => {
+    btn.addEventListener("click", (e) => {
+        e.preventDefault();
+        const imgSrc = btn.getAttribute("href");
+        const title  = btn.getAttribute("data-project-title") || "";
+        openLightbox(imgSrc, title);
+    });
+});
+
+// Close on backdrop click
+if (lightboxBackdrop) {
+    lightboxBackdrop.addEventListener("click", closeLightbox);
+}
+
+// Close on close button click
+if (lightboxClose) {
+    lightboxClose.addEventListener("click", closeLightbox);
+}
+
+// Close on Escape key
+document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && lightbox && lightbox.classList.contains("active")) {
+        closeLightbox();
+    }
+});
