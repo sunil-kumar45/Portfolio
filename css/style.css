@@ -1134,3 +1134,367 @@ h3.my-profession{
         font-size: 18px;
     }
 }
+
+/* ==========================================================================
+   Contact Section Redesign - Matching Reference Image
+   ========================================================================== */
+
+/* Theme and layout overrides */
+.contact-redesign {
+    background: var(--bg-black-900);
+}
+
+/* Centered title styling (override underscores/lines) */
+.text-center-redesign {
+    text-align: center;
+    margin-bottom: 30px;
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+.text-center-redesign h2 {
+    display: inline-block;
+    font-size: 38px;
+    font-weight: 700;
+    color: var(--text-black-900);
+}
+.text-center-redesign h2::before,
+.text-center-redesign h2::after {
+    display: none !important; /* Hide original skin borders under title */
+}
+
+.contact-section-subtitle {
+    margin-top: 15px;
+    font-size: 15px;
+    color: var(--text-black-700);
+    font-weight: 400;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+/* Social icons layout */
+.social-cards-row {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 0;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.social-card-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    min-width: 150px;
+}
+
+/* Icons bubble styling */
+.social-icon-bubble {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    font-size: 32px;
+    margin-bottom: 15px;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    border: none;
+    box-shadow: 0 10px 20px rgba(48, 46, 77, 0.08), 0 2px 6px rgba(48, 46, 77, 0.04);
+}
+
+body.dark .social-icon-bubble {
+    background-color: var(--bg-black-100);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.social-icon-bubble:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 14px 28px rgba(48, 46, 77, 0.15), 0 10px 10px rgba(48, 46, 77, 0.1);
+}
+
+body.dark .social-icon-bubble:hover {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.5), 0 10px 10px rgba(0, 0, 0, 0.4);
+}
+
+/* Specific icon colors */
+.github-bubble i {
+    color: #171515;
+}
+body.dark .github-bubble i {
+    color: #ffffff;
+}
+
+.linkedin-bubble i {
+    color: #0077b5;
+}
+
+.leetcode-bubble .leetcode-icon-svg {
+    width: 32px;
+    height: 32px;
+    fill: #f89f1b; /* Leetcode orange */
+    transition: fill 0.3s ease;
+}
+
+.leetcode-bubble:hover .leetcode-icon-svg {
+    fill: #e68a00;
+}
+
+/* Standard Instagram gradient text/icon */
+.instagram-bubble i {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.email-bubble i {
+    color: #4f46e5;
+}
+body.dark .email-bubble i {
+    color: #818cf8;
+}
+
+/* Text elements */
+.social-card-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text-black-900);
+    margin-bottom: 6px;
+    text-transform: none;
+}
+
+.social-card-link {
+    font-size: 13px;
+    color: #3b82f6; /* Classic link blue */
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.2s ease;
+    word-break: break-all;
+}
+
+.social-card-link:hover {
+    color: #1d4ed8;
+    text-decoration: underline;
+}
+
+/* Divider styling */
+.divider-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 20px 0 40px;
+}
+
+.contact-divider {
+    position: relative;
+    width: 100%;
+    height: 1px;
+    background-color: var(--bg-black-50);
+}
+
+.divider-dot {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #818cf8; /* Light purple dot */
+    border: 2px solid var(--bg-black-900);
+}
+
+body.dark .divider-dot {
+    border-color: var(--bg-black-900);
+    background-color: #818cf8;
+}
+
+/* Title text uppercase subtitle */
+.uppercase-subtitle {
+    font-size: 15px;
+    font-weight: 800;
+    color: var(--text-black-900);
+    text-align: center;
+    letter-spacing: 1.5px;
+    margin-bottom: 40px;
+}
+
+/* Redesigned form styling */
+.contact-form-redesign {
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+.contact-form-redesign .col-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
+.contact-form-redesign .col-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+.contact-form-redesign .form-item {
+    margin-bottom: 25px;
+}
+
+.contact-form-redesign .form-item .form-control-redesign {
+    width: 100%;
+    height: 52px;
+    border-radius: 30px;
+    background: #fdfafb; /* Very light pinkish-gray, or matching page */
+    border: 1px solid rgba(48, 46, 77, 0.08);
+    padding: 10px 25px;
+    font-size: 15px;
+    color: var(--text-black-900);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+body.dark .contact-form-redesign .form-item .form-control-redesign {
+    background: var(--bg-black-100);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.contact-form-redesign .form-item .form-control-redesign:focus {
+    background-color: #ffffff;
+    border-color: #818cf8; /* focus border color */
+    box-shadow: 0 8px 20px rgba(129, 140, 248, 0.12);
+}
+
+body.dark .contact-form-redesign .form-item .form-control-redesign:focus {
+    background-color: var(--bg-black-100);
+    border-color: #818cf8;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.contact-form-redesign .form-item textarea.form-control-redesign {
+    height: 160px;
+    border-radius: 20px;
+    resize: vertical;
+}
+
+/* Send Message Button overrides */
+.send-message-btn-redesign {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: #e61c38 !important; /* Vibrant Red from screenshot */
+    color: #ffffff !important;
+    font-weight: 700;
+    font-size: 15px;
+    padding: 14px 40px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(230, 28, 56, 0.3);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.send-message-btn-redesign:hover {
+    background-color: #cc122c !important;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(230, 28, 56, 0.4);
+}
+
+.send-message-btn-redesign i {
+    font-size: 14px;
+    transform: rotate(0deg);
+}
+
+/* Media Queries for Responsiveness */
+@media(max-width: 991px) {
+    .social-cards-row {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px 0;
+    }
+    .social-card-item {
+        flex: 0 0 33.33%;
+        max-width: 33.33%;
+        min-width: unset;
+    }
+}
+
+@media(max-width: 767px) {
+    .social-card-item {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    .contact-form-redesign .col-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+@media(max-width: 480px) {
+    .social-card-item {
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+/* Form submission status styling */
+.form-status-box {
+    width: 100%;
+    border-radius: 25px;
+    font-size: 15px;
+    font-weight: 500;
+    text-align: center;
+    padding: 12px 20px;
+    margin-top: -10px;
+    margin-bottom: 15px;
+    display: none;
+    transition: all 0.3s ease;
+}
+
+.form-status-box.success {
+    display: block;
+    background-color: rgba(46, 204, 113, 0.15);
+    color: #2ecc71;
+    border: 1px solid rgba(46, 204, 113, 0.3);
+}
+
+.form-status-box.error {
+    display: block;
+    background-color: rgba(231, 76, 60, 0.15);
+    color: #e74c3c;
+    border: 1px solid rgba(231, 76, 60, 0.3);
+}
+
+.form-status-box.sending {
+    display: block;
+    background-color: rgba(52, 152, 219, 0.15);
+    color: #3498db;
+    border: 1px solid rgba(52, 152, 219, 0.3);
+}
+
+/* Left-aligned Let's Connect title block */
+.connect-left-align {
+    width: 100%;
+    margin-bottom: 30px;
+    text-align: left;
+}
+.connect-left-align h3 {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--text-black-900);
+    margin-bottom: 10px;
+}
+.connect-left-align .contact-section-subtitle {
+    margin-left: 0;
+    margin-right: auto;
+    margin-top: 5px;
+}
+
+
+

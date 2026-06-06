@@ -102,3 +102,58 @@ serviceCards.forEach(card => {
         }
     });
 });
+
+/*============================= Contact Form Web3Forms Submit =====================*/
+const contactForm = document.getElementById("contact-form");
+const formStatus = document.getElementById("form-status");
+
+if (contactForm) {
+    contactForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+        
+        // Prepare form data
+        const formData = new FormData(contactForm);
+        
+        // Show sending state
+        formStatus.textContent = "Sending message... Please wait.";
+        formStatus.className = "form-status-box sending";
+        formStatus.style.display = "block";
+        
+        // Disable button to prevent double submit
+        const submitBtn = contactForm.querySelector('button[type="submit"]');
+        if (submitBtn) submitBtn.disabled = true;
+
+        fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            body: formData
+        })
+        .then(async (response) => {
+            let json = await response.json();
+            if (response.status == 200) {
+                // Success
+                formStatus.textContent = "Thank you! Your message has been sent successfully.";
+                formStatus.className = "form-status-box success";
+                contactForm.reset();
+            } else {
+                // Error
+                console.log(response);
+                formStatus.textContent = json.message || "Something went wrong. Please try again later.";
+                formStatus.className = "form-status-box error";
+            }
+        })
+        .catch((error) => {
+            console.log(error);
+            formStatus.textContent = "Network error. Please check your internet connection.";
+            formStatus.className = "form-status-box error";
+        })
+        .then(() => {
+            // Re-enable submit button
+            if (submitBtn) submitBtn.disabled = false;
+            
+            // Hide message after 6 seconds
+            setTimeout(() => {
+                formStatus.style.display = "none";
+            }, 6000);
+        });
+    });
+}
