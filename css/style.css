@@ -284,6 +284,9 @@ h3.my-profession{
     margin: 15px 0;
 }
 .typing{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
+    font-weight: 800;
     color: var(--skin-color);
 }
 .home-info p{
@@ -1103,6 +1106,9 @@ h3.my-profession{
         white-space: nowrap;
         text-align: center;
         margin: 10px 0;
+    }
+    .typing {
+        font-size: clamp(16px, 5vw, 26px);
     }
     .home-info p {
         font-size: 15px;
