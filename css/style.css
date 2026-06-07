@@ -1267,6 +1267,18 @@ body.dark .email-bubble i {
     color: #818cf8;
 }
 
+.facebook-bubble i {
+    color: #1877f2;
+}
+
+.youtube-bubble i {
+    color: #ff0000;
+}
+
+.portfolio-bubble i {
+    color: var(--skin-color);
+}
+
 /* Text elements */
 .social-card-title {
     font-size: 15px;
@@ -1431,22 +1443,38 @@ body.dark .contact-form-redesign .form-item .form-control-redesign:focus {
     }
 }
 
-@media(max-width: 767px) {
+/* Mobile: 3-column CSS Grid layout for contact icons */
+@media(max-width: 768px) {
+    .social-cards-row {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px 8px;
+        justify-items: center;
+        margin-bottom: 30px;
+    }
     .social-card-item {
-        flex: 0 0 50%;
-        max-width: 50%;
+        flex: unset;
+        max-width: unset;
+        min-width: unset;
+        width: 100%;
+        padding: 8px 4px;
+    }
+    .social-icon-bubble {
+        width: 58px;
+        height: 58px;
+        font-size: 26px;
+        margin-bottom: 10px;
+    }
+    .leetcode-bubble .leetcode-icon-svg {
+        width: 26px;
+        height: 26px;
+    }
+    .social-card-title {
+        font-size: 13px;
     }
     .contact-form-redesign .col-6 {
         flex: 0 0 100%;
         max-width: 100%;
-    }
-}
-
-@media(max-width: 480px) {
-    .social-card-item {
-        flex: 0 0 100%;
-        max-width: 100%;
-        margin-bottom: 10px;
     }
 }
 
