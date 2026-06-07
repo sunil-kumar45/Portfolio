@@ -1183,21 +1183,23 @@ h3.my-profession{
 /* Social icons layout */
 .social-cards-row {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: flex-start;
-    gap: 0;
+    gap: 10px 0;
     width: 100%;
     margin-bottom: 40px;
 }
 
 .social-card-item {
-    flex: 1;
+    flex: 0 0 12.5%;
+    max-width: 12.5%;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 10px;
-    min-width: 150px;
+    padding: 10px 6px;
+    min-width: 90px;
 }
 
 /* Icons bubble styling */
@@ -1262,21 +1264,26 @@ body.dark .github-bubble i {
 
 .email-bubble i {
     color: #4f46e5;
+    -webkit-text-fill-color: #4f46e5;
 }
 body.dark .email-bubble i {
     color: #818cf8;
+    -webkit-text-fill-color: #818cf8;
 }
 
 .facebook-bubble i {
     color: #1877f2;
+    -webkit-text-fill-color: #1877f2;
 }
 
 .youtube-bubble i {
     color: #ff0000;
+    -webkit-text-fill-color: #ff0000;
 }
 
 .portfolio-bubble i {
     color: var(--skin-color);
+    -webkit-text-fill-color: var(--skin-color);
 }
 
 /* Text elements */
@@ -1434,11 +1441,11 @@ body.dark .contact-form-redesign .form-item .form-control-redesign:focus {
     .social-cards-row {
         flex-wrap: wrap;
         justify-content: center;
-        gap: 20px 0;
+        gap: 16px 0;
     }
     .social-card-item {
-        flex: 0 0 33.33%;
-        max-width: 33.33%;
+        flex: 0 0 25%;
+        max-width: 25%;
         min-width: unset;
     }
 }
