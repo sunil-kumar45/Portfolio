@@ -1,90 +1,192 @@
-.style-switcher{
+/* ==========================================================
+   Style Switcher — Definitive Clean Implementation
+   ========================================================== */
+
+/* 
+  The .style-switcher is a fixed invisible anchor (no background, 
+  no border) that holds both icon buttons as absolute children.
+  The icons use `right: 100%` to "poke out" to the left of the panel.
+*/
+.style-switcher {
     position: fixed;
     right: 0;
     top: 80px;
-    padding: 20px;
-    width: 220px;
-    border: 1px solid var(--bg-black-50);
-    border-right: none;
-    background: var(--bg-black-100);
+    width: 44px;           /* just enough to be a positioning context */
+    height: 110px;         /* tall enough for both icon buttons */
+    background: transparent;
+    border: none;
     z-index: 101;
-    border-radius: 10px 0 0 10px;
-    transition: all 0.3s ease;
-    transform: translateX(100%);
-    box-shadow: -5px 5px 25px rgba(0, 0, 0, 0.15);
+    overflow: visible;     /* CRITICAL: popup must be visible outside this box */
 }
-.style-switcher.open{
-    transform: translateX(0);
-}
-.style-switcher .s-icon{
+
+/* ── Icon Buttons ─────────────────────────────────────────── */
+.style-switcher .s-icon {
     position: absolute;
-    height: 40px;
-    width: 40px;
+    right: 0;              /* flush with right edge of viewport */
+    width: 44px;
+    height: 44px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 18px;
     background: var(--bg-black-100);
     color: var(--text-black-900);
-    right: 100%;
     border: 1px solid var(--bg-black-50);
     border-right: none;
+    border-radius: 10px 0 0 10px;
     cursor: pointer;
-    transition: all 0.3s ease;
-    border-radius: 8px 0 0 8px;
-    box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: -3px 3px 14px rgba(0, 0, 0, 0.12);
+    transition: color 0.25s ease, background 0.25s ease;
+    z-index: 102;
 }
-.style-switcher .s-icon i{
-    line-height: 40px;
-}
-.style-switcher .style-switcher-toggler{
-    top: 20px;
-}
-.style-switcher .day-night{
-    top: 65px;
-}
-.style-switcher .s-icon:hover{
+.style-switcher .s-icon:hover {
     color: var(--skin-color);
+    background: var(--bg-black-50);
 }
-.style-switcher h4{
-    margin: 0 0 15px;
-    color: var(--text-black-900);
-    font-size: 14px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+
+/* Gear at top */
+.style-switcher .style-switcher-toggler {
+    top: 0;
 }
-.style-switcher .colors{
+
+/* Moon just below gear */
+.style-switcher .day-night {
+    top: 54px;
+}
+
+/* Gear spin on hover only */
+.style-switcher .style-switcher-toggler:hover i {
+    animation: spinGear 1.5s linear infinite;
+}
+@keyframes spinGear {
+    to { transform: rotate(360deg); }
+}
+
+/* ── Glassmorphism Color Popup ────────────────────────────── */
+.color-popup {
+    position: absolute;
+    top: 0;
+    right: calc(100% + 10px);   /* floats to the left of the panel */
+
+    /* Glassmorphism */
+    background: rgba(255, 255, 255, 0.20);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 16px;
+    box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.18),
+        0 2px 8px rgba(0, 0, 0, 0.08);
+
+    padding: 12px 10px;
     display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    justify-content: flex-start;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+
+    /* Hidden by default */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(8px) scale(0.92);
+    transform-origin: right top;
+    transition:
+        opacity 0.28s ease,
+        transform 0.28s cubic-bezier(0.25, 1, 0.5, 1),
+        visibility 0.28s ease;
+    pointer-events: none;
+    z-index: 103;
 }
-.style-switcher .colors span{
-    display: inline-block;
-    height: 30px;
-    width: 30px;
+
+/* Open state */
+.color-popup.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0) scale(1);
+    pointer-events: auto;
+}
+
+/* Dark mode glassmorphism */
+body.dark .color-popup {
+    background: rgba(20, 20, 30, 0.75);
+    border-color: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+/* ── Color Dots ───────────────────────────────────────────── */
+.palette-dot {
+    display: block;
+    width: 26px;
+    height: 26px;
     border-radius: 50%;
     cursor: pointer;
-    transition: all 0.2s ease;
-    border: 2px solid transparent;
+    border: 2.5px solid transparent;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.22);
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+    position: relative;
+    flex-shrink: 0;
 }
-.style-switcher .colors span:hover{
-    transform: scale(1.15);
-    border-color: var(--text-black-900);
+.palette-dot:hover {
+    transform: scale(1.25);
 }
-.style-switcher .color-1{
-    background: #ec1839;
+
+/* Active / selected dot */
+.palette-dot.active-color {
+    border-color: #ffffff;
+    box-shadow:
+        0 0 0 3px rgba(255, 255, 255, 0.4),
+        0 4px 16px rgba(0, 0, 0, 0.3);
 }
-.style-switcher .color-2{
-    background: #fa5b0f;
+.palette-dot.active-color::after {
+    content: '✓';
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    font-size: 13px;
+    font-weight: 900;
+    color: #fff;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
 }
-.style-switcher .color-3{
-    background: #37b182;
-}
-.style-switcher .color-4{
-    background: #1854b4;
-}
-.style-switcher .color-5{
-    background: #f021b2;
+
+/* Dot colors */
+.color-1 { background: #ec1839; }
+.color-2 { background: #fa5b0f; }
+.color-3 { background: #37b182; }
+.color-4 { background: #1854b4; }
+.color-5 { background: #f021b2; }
+
+/* Per-color hover glow */
+.color-1:hover { box-shadow: 0 0 14px rgba(236, 24, 57, 0.65); }
+.color-2:hover { box-shadow: 0 0 14px rgba(250, 91, 15, 0.65); }
+.color-3:hover { box-shadow: 0 0 14px rgba(55, 177, 130, 0.65); }
+.color-4:hover { box-shadow: 0 0 14px rgba(24, 84, 180, 0.65); }
+.color-5:hover { box-shadow: 0 0 14px rgba(240, 33, 178, 0.65); }
+
+/* ── Responsive ───────────────────────────────────────────── */
+@media (max-width: 480px) {
+    .style-switcher {
+        top: 70px;
+        width: 40px;
+        height: 100px;
+    }
+    .style-switcher .s-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+    .style-switcher .day-night {
+        top: 48px;
+    }
+    .palette-dot {
+        width: 22px;
+        height: 22px;
+    }
+    .color-popup {
+        right: calc(100% + 6px);
+        border-radius: 13px;
+        padding: 10px 8px;
+    }
 }
