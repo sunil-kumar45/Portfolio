@@ -55,18 +55,18 @@ ul{
     padding-right: 15px;
 }
 .container{
-    max-width: 1100px;
+    max-width: 1280px;
     width: 100%;
     margin: auto;
 }
 .section .container{
-    padding-top: 60px;
-    padding-bottom: 70px;
+    padding-top: 48px;
+    padding-bottom: 52px;
 }
 .section-title{
     flex: 0 0 100%;
     max-width: 100%;
-    margin-bottom: 60px;
+    margin-bottom: 36px;
 }
 .section-title h2{
     font-size: 40px;
@@ -114,9 +114,10 @@ ul{
 }
 .btn:hover{
     transform: scale(1.05);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.18);
 }
 .shadow-dark{
-    box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
+    box-shadow: 0 4px 20px rgba(48, 46, 77, 0.12), 0 1px 4px rgba(48,46,77,0.06);
 }
 /*aside*/
 .aside{
@@ -239,6 +240,9 @@ ul{
 }
 .aside .nav li a.active{
     color: var(--skin-color);
+    border-left: 3px solid var(--skin-color);
+    padding-left: 12px;
+    font-weight: 700;
 }
 .aside .nav li a i{
     margin-right: 15px;
@@ -270,8 +274,9 @@ ul{
     max-width: 60%;
 }
 h3.hello{
-    font-size: 28px;
-    margin: 15px 0 ;
+    font-size: 30px;
+    margin: 12px 0;
+    line-height: 1.3;
 }
 h3.hello span{
     font-family: 'Montserrat', sans-serif;
@@ -291,9 +296,10 @@ h3.my-profession{
     color: var(--skin-color);
 }
 .home-info p{
-    margin-bottom: 70px;
-    font-size: 20px;
+    margin-bottom: 28px;
+    font-size: 16px;
     color: var(--text-black-700);
+    line-height: 1.75;
 }
 .home .row{
     align-items: center;
@@ -356,14 +362,14 @@ h3.my-profession{
     color: var(--skin-color);
 }
 .about .about-content .about-text p{
-    font-size: 16px;
-    line-height: 25px;
+    font-size: 15px;
+    line-height: 1.75;
     color: var(--text-black-700);
 }
 .about .about-content .personal-info{
     flex: 0 0 55%;
     max-width: 55%;
-    margin-top: 40px;
+    margin-top: 20px;
 }
 .about .about-content .personal-info .info-item{
     flex: 0 0 50%;
@@ -402,7 +408,7 @@ h3.my-profession{
 .about .about-content .skills{
     flex: 0 0 45%;
     max-width: 45%;
-    margin-top: 40px;
+    margin-top: 20px;
 }
 .about .about-content .skills .title{
     font-size: 24px;
@@ -447,7 +453,7 @@ h3.my-profession{
 .about .about-content .experience{
     flex: 0 0 50%;
     max-width: 50%;
-    margin-top: 30px;
+    margin-top: 20px;
 }
 .about .about-content h3.title{
     font-size: 24px;
@@ -470,7 +476,7 @@ h3.my-profession{
 .about .about-content .timeline .timeline-item{
     position: relative;
     padding-left: 37px;
-    padding-bottom: 50px;
+    padding-bottom: 32px;
 }
 .about .about-content .timeline .timeline-item:last-child{
     padding-bottom: 0;
@@ -529,11 +535,11 @@ h3.my-profession{
 .service .service-item .service-item-inner{
     background-color: var(--bg-black-100);
     border: 1px solid var(--bg-black-50);
-    border-radius: 10px;
-    padding: 30px 20px;
+    border-radius: 12px;
+    padding: 24px 20px;
     text-align: center;
     transition: all 0.4s ease;
-    height: 320px;
+    height: 280px;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -541,10 +547,11 @@ h3.my-profession{
     align-items: center;
     overflow: hidden;
     cursor: pointer;
+    box-shadow: 0 2px 12px rgba(48,46,77,0.07);
 }
 .service .service-item .service-item-inner .logo-box{
     width: 100%;
-    height: 120px;
+    height: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -627,7 +634,7 @@ h3.my-profession{
 .portfolio .portfolio-heading{
     flex: 0 0 100%;
     max-width: 100%;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 .portfolio .portfolio-heading h2{
     color: var(--text-black-900);
@@ -636,7 +643,7 @@ h3.my-profession{
 .portfolio .portfolio-item{
     flex: 0 0 33.33%;
     max-width: 33.33%;
-    margin-bottom: 30px;
+    margin-bottom: 22px;
 }
 .portfolio .portfolio-item-inner {
     background-color: var(--bg-black-100);
@@ -648,7 +655,7 @@ h3.my-profession{
     display: flex;
     flex-direction: column;
     width: 100%;
-    aspect-ratio: 1 / 1;
+    box-shadow: 0 2px 12px rgba(48,46,77,0.07);
 }
 .portfolio .portfolio-item-inner:hover {
     box-shadow: 0 10px 25px rgba(48, 46, 77, 0.15);
@@ -658,9 +665,8 @@ h3.my-profession{
     position: relative;
     overflow: hidden;
     width: 100%;
-    flex-grow: 1;
-    flex-shrink: 1;
-    height: 0;
+    flex-shrink: 0;
+    height: 200px;
 }
 .portfolio .portfolio-item-inner .portfolio-img-container img {
     width: 100%;
@@ -757,7 +763,7 @@ h3.my-profession{
     color: var(--text-black-900);
     text-align: center;
     font-size: 15px;
-    margin-bottom: 60px;
+    margin-bottom: 30px;
 }
 .contact-info-item{
     flex: 0 0 25%;
@@ -1662,3 +1668,264 @@ body.dark .contact-form-redesign .form-item .form-control-redesign:focus {
         max-height: 65vh;
     }
 }
+
+/* ==========================================================================
+   Responsive Layout & Desktop Site Optimization for Mobile
+   ========================================================================== */
+
+/* 
+   Explicit overrides for Desktop Site enabled on Mobile Browsers.
+   Uses the JS-injected class to cover cases where viewport might be scaled 
+   to larger values (e.g. 980px, 1024px, 1280px).
+*/
+body.desktop-site-on-mobile .section,
+body.desktop-site-on-mobile .home {
+    min-height: auto !important;
+}
+
+body.desktop-site-on-mobile .section {
+    padding: 0 15px !important;
+}
+
+body.desktop-site-on-mobile .section .container {
+    padding-top: 30px !important;
+    padding-bottom: 30px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+body.desktop-site-on-mobile .home .row {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+}
+
+body.desktop-site-on-mobile .home .home-info {
+    flex: 0 0 58% !important;
+    max-width: 58% !important;
+    text-align: left !important;
+}
+
+body.desktop-site-on-mobile .home .home-info .btn {
+    margin: 0 !important;
+}
+
+body.desktop-site-on-mobile .home .home-img {
+    flex: 0 0 38% !important;
+    max-width: 38% !important;
+    margin: 0 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+body.desktop-site-on-mobile .home .home-img img {
+    height: auto !important;
+    max-height: 300px !important;
+    width: auto !important;
+    max-width: 100% !important;
+}
+
+body.desktop-site-on-mobile .about .about-content .personal-info,
+body.desktop-site-on-mobile .about .about-content .skills,
+body.desktop-site-on-mobile .about .about-content .education,
+body.desktop-site-on-mobile .about .about-content .experience {
+    margin-top: 15px !important;
+}
+
+body.desktop-site-on-mobile .service .service-item,
+body.desktop-site-on-mobile .portfolio .portfolio-item {
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
+}
+
+body.desktop-site-on-mobile .service .service-item .service-item-inner {
+    height: auto !important;
+    min-height: 240px !important;
+    padding: 20px 15px !important;
+}
+
+body.desktop-site-on-mobile .portfolio .portfolio-item-inner .portfolio-img-container {
+    height: 160px !important;
+}
+
+body.desktop-site-on-mobile .connect-section {
+    margin: 30px 0 20px !important;
+}
+
+body.desktop-site-on-mobile .divider-row {
+    margin: 15px 0 25px !important;
+}
+
+body.desktop-site-on-mobile .uppercase-subtitle {
+    margin-bottom: 25px !important;
+}
+
+body.desktop-site-on-mobile .contact-info-item {
+    margin-bottom: 30px !important;
+}
+
+body.desktop-site-on-mobile .last-text p {
+    margin-top: 40px !important;
+    padding: 15px 0 !important;
+}
+
+/* Breakpoint 1: 1024px */
+@media (max-width: 1024px) {
+    /* Prevent huge blank areas by resetting fixed/viewport heights */
+    .section,
+    .home {
+        min-height: auto !important;
+    }
+    
+    /* Ensure section spacing is proportional to screen size */
+    .section {
+        padding: 0 15px !important;
+    }
+    
+    .section .container {
+        padding-top: 30px !important;
+        padding-bottom: 30px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    
+    /* Reduce margins in about, timeline and skills */
+    .about .about-content .personal-info,
+    .about .about-content .skills,
+    .about .about-content .education,
+    .about .about-content .experience {
+        margin-top: 15px !important;
+    }
+    
+    .about .about-content h3.title {
+        margin-bottom: 15px !important;
+    }
+    
+    /* Prevent fixed heights from creating blank areas in services */
+    .service .service-item .service-item-inner {
+        height: auto !important;
+        min-height: 240px !important;
+        padding: 20px 15px !important;
+    }
+    
+    /* Keep Portfolio cards compact */
+    .portfolio .portfolio-item-inner .portfolio-img-container {
+        height: 160px !important;
+    }
+    
+    /* Contact and Footer spacing adjustments */
+    .connect-section {
+        margin: 30px 0 20px !important;
+    }
+    
+    .divider-row {
+        margin: 15px 0 25px !important;
+    }
+    
+    .uppercase-subtitle {
+        margin-bottom: 25px !important;
+    }
+    
+    .contact-info-item {
+        margin-bottom: 30px !important;
+    }
+    
+    .last-text p {
+        margin-top: 40px !important;
+        padding: 15px 0 !important;
+    }
+}
+
+/* Specific optimization for Desktop Site requested on mobile browsers (viewport >= 768px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    /* Prevent Home section from stacking and keep profile image beside text */
+    .home .row {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        width: 100% !important;
+    }
+    
+    .home .home-info {
+        flex: 0 0 58% !important;
+        max-width: 58% !important;
+        text-align: left !important;
+    }
+    
+    .home .home-info .btn {
+        margin: 0 !important;
+    }
+    
+    .home .home-img {
+        flex: 0 0 38% !important;
+        max-width: 38% !important;
+        margin: 0 !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+    }
+    
+    .home .home-img img {
+        height: auto !important;
+        max-height: 300px !important;
+        width: auto !important;
+        max-width: 100% !important;
+    }
+    
+    /* Fix alignment for Services and Portfolio items at 980px viewport */
+    .service .service-item,
+    .portfolio .portfolio-item {
+        flex: 0 0 50% !important;
+        max-width: 50% !important;
+    }
+}
+
+/* Breakpoint 2: 768px */
+@media (max-width: 768px) {
+    /* Compact Portfolio card heights for smaller viewports */
+    .portfolio .portfolio-item-inner .portfolio-img-container {
+        height: 140px !important;
+    }
+    
+    /* Stack Home section gracefully without huge gaps */
+    .home .row {
+        flex-wrap: wrap !important;
+    }
+    
+    .home .home-img {
+        margin: 20px auto 15px !important;
+        order: 1 !important;
+    }
+    
+    .home .home-info {
+        order: 2 !important;
+        text-align: center !important;
+    }
+}
+
+/* Breakpoint 3: 576px */
+@media (max-width: 576px) {
+    /* Section containers should have minimal responsive padding */
+    .section .container {
+        padding-top: 20px !important;
+        padding-bottom: 20px !important;
+    }
+    
+    /* Services and Portfolio cards should stack fully below 576px */
+    .service .service-item,
+    .portfolio .portfolio-item {
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+        margin-bottom: 15px !important;
+    }
+    
+    .portfolio .portfolio-item-inner .portfolio-img-container {
+        height: 180px !important; /* larger height when single column on mobile */
+    }
+}
+
+

@@ -208,3 +208,20 @@ document.addEventListener("keydown", (e) => {
         closeLightbox();
     }
 });
+
+/*============================= Detect Desktop Site on Mobile =====================*/
+function detectDesktopSite() {
+    // Physical screen width or height is less than 1024px (phone/tablet)
+    const isMobileDevice = window.screen.width < 1024 || window.screen.height < 1024 || ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
+    // Viewport width is 768px or larger, indicating desktop rendering
+    const isDesktopViewport = window.innerWidth >= 768;
+    
+    if (isMobileDevice && isDesktopViewport) {
+        document.body.classList.add("desktop-site-on-mobile");
+    } else {
+        document.body.classList.remove("desktop-site-on-mobile");
+    }
+}
+window.addEventListener("load", detectDesktopSite);
+window.addEventListener("resize", detectDesktopSite);
+detectDesktopSite(); // Run immediately
